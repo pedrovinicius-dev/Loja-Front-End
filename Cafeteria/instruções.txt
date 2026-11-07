@@ -1,0 +1,5 @@
+INICIAR API
+
+dentro da pasta Cafeteria rodar no terminal:
+
+npx json-server db.json
