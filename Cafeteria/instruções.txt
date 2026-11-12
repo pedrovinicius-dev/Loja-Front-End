@@ -3,3 +3,6 @@ INICIAR API
 dentro da pasta Cafeteria rodar no terminal:
 
 npx json-server db.json
+
+
+*falta deixar o catalogo responsivo para dispositivos mobile

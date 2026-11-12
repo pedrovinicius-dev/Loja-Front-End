@@ -14,7 +14,7 @@ async function iniciarSite() {
     // Cria um elemento de título <h1> em memória; ele ainda não foi adicionado à página.
     const titulo = document.createElement('h1');
     // Define o texto que será exibido dentro do título.
-    titulo.textContent = 'Cafeteria Autoria Web';
+    titulo.textContent = 'Château Café';
     // Adiciona classes do Bootstrap para centralizar o texto e aplicar margens verticais.
     titulo.className = 'text-center my-4';
 
@@ -27,6 +27,24 @@ async function iniciarSite() {
     const linha = document.createElement('div');
     // Aplica classes do Bootstrap para criar uma linha e espaçar seus itens.
     linha.className = 'row g-4';
+
+    const catalogo = document.createElement('div');//catalogo de produtos
+    catalogo.className = 'catalogo';
+
+    const cabeca = document.createElement('div');//header
+    cabeca.className = 'cabeca';
+
+    const carrinho = document.createElement('button');//carrinho
+    carrinho.className = 'carrinho';
+    
+    const iconeCarrinho = document.createElement('img');//icone do carrinho
+
+    const textoCarrinho = document.createElement('span');//texto do carrinho
+    textoCarrinho.textContent = 'Carrinho';
+    textoCarrinho.className = 'texto-carrinho';
+
+    iconeCarrinho.src = '../assets/carrinho.svg';
+    iconeCarrinho.className = 'icone-carrinho';
 
     // Percorre cada café recebido da API; cafe representa o item atual em cada repetição.
     cafes.forEach(cafe => {
@@ -92,6 +110,23 @@ async function iniciarSite() {
             currency: 'BRL'
         });
 
+        // Cria um botão para este café.
+        const botaoAdicionar = document.createElement('button');
+
+        // Define o tipo para que o botão não tente enviar um formulário.
+        botaoAdicionar.type = 'button';
+
+        // Aplica o estilo de botão escuro do Bootstrap e uma margem acima.
+        botaoAdicionar.className = 'btn btn-dark mt-2';
+
+        // Define o texto que aparece no botão.
+        botaoAdicionar.textContent = 'Adicionar ao carrinho';
+
+        //adicionar lógica para adicionar ao carrinho
+        botaoAdicionar.addEventListener('click', () => {
+            
+        });
+
         // Adiciona o título ao corpo do card; appendChild move o elemento para dentro do pai.
         corpo.appendChild(nome);
         // Adiciona a descrição depois do título.
@@ -100,11 +135,14 @@ async function iniciarSite() {
         corpo.appendChild(ingredientes);
         // Adiciona o preço depois dos ingredientes.
         corpo.appendChild(preco);
+          // Coloca o botão dentro do corpo deste card.
+        corpo.appendChild(botaoAdicionar);
 
         // Coloca a imagem no card, antes do corpo.
         card.appendChild(imagem);
         // Coloca o corpo (com os textos) no card.
         card.appendChild(corpo);
+
 
         coluna.appendChild(card);
         // Adiciona a coluna à linha que agrupa todos os cafés.
@@ -112,11 +150,16 @@ async function iniciarSite() {
 
     });
 
-    // Depois que todos os cafés foram percorridos, adiciona a linha ao contêiner externo.
-    container.appendChild(linha);
+    carrinho.appendChild(textoCarrinho);
+    carrinho.appendChild(iconeCarrinho);
+    cabeca.appendChild(carrinho);
 
-    // Insere o título no elemento root da página.
-    root.appendChild(titulo);
+    cabeca.appendChild(titulo);
+    container.appendChild(cabeca);
+
+    catalogo.appendChild(linha);
+    container.appendChild(catalogo);    
+
     // Insere o contêiner com a grade de cards no elemento root.
     root.appendChild(container);
 

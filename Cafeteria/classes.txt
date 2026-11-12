@@ -1,0 +1,65 @@
+CLASSES E RESUMO DO CATALOGO
+
+RESUMO GERAL
+- main.js busca os cafes pela API e cria o conteudo dentro do elemento #root.
+- Cada cafe vira um card com imagem, nome, descricao, ingredientes, preco e botao.
+- Os cards sao criados dentro de cafes.forEach(), por isso cada um recebe os dados
+  do cafe correspondente.
+- Os produtos e suas informacoes ficam em db.json.
+- O botao "Adicionar ao carrinho" aparece nos cards, mas sua funcao de clique ainda
+  esta vazia no main.js.
+
+CLASSES DO BOOTSTRAP
+
+TITULO DA PAGINA
+- text-center: centraliza o texto do titulo.
+- my-4: adiciona margem em cima e embaixo.
+
+CONTAINER E GRADE
+- container: limita e centraliza a largura do conteudo.
+- row: organiza as colunas dos cafes na grade.
+- g-4: define o espaco entre as colunas e linhas.
+- col-12: coluna ocupa a largura inteira em telas pequenas.
+- col-md-6: coluna ocupa metade da linha em telas medias.
+- col-lg-4: coluna ocupa um terco da linha em telas grandes.
+
+CARD E CONTEUDO
+- card: cria a aparencia de cartao.
+- h-100: faz o cartao ocupar toda a altura disponivel na coluna.
+- card-img-top: posiciona a imagem no topo do card.
+- card-body: area interna do card para os textos e o botao.
+- card-title: estilo do nome do cafe.
+- card-text: estilo da descricao.
+- fw-bold: deixa o preco em negrito.
+
+BOTAO DE ADICIONAR
+- btn: estilo base de botao do Bootstrap.
+- btn-dark: aplica o estilo escuro.
+- mt-2: adiciona margem acima do botao.
+
+CLASSES PROPRIAS DO PROJETO
+- catalogo: envolve a grade; o CSS define espacamento, tamanho, fundo e borda.
+- cabeca: barra superior fixa com o nome da cafeteria e o botao do carrinho.
+- carrinho: botao do carrinho no topo.
+- texto-carrinho: estilo do texto dentro do botao do carrinho.
+- icone-carrinho: define o tamanho do icone do carrinho.
+
+OUTROS DETALHES
+- O paragrafo de ingredientes ainda nao tem classe propria.
+- A altura de 220px e o corte das imagens sao definidos diretamente no main.js.
+- .carrinho:hover e um estado CSS ativado quando o ponteiro passa sobre o botao.
+- .cabeca h1 seleciona o h1 que esta dentro da cabeca; nao e uma classe.
+- O seletor container sem ponto procura uma tag <container>. Para selecionar a
+  classe do Bootstrap, o seletor CSS seria .container.
+
+COMO ADICIONAR UMA CLASSE PROPRIA
+No main.js:
+    elemento.classList.add('minha-classe');
+
+No CSS/style.css:
+    .minha-classe {
+        /* Adicione aqui as propriedades CSS. */
+    }
+
+Para usar varias classes em className, separe os nomes por espacos:
+    elemento.className = 'card h-100 minha-classe';

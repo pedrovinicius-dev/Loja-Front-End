@@ -20,10 +20,58 @@
     {
       "id": 3,
       "title": "Cappuccino",
-      "description": "Café espresso combinado com leite vaporizado e espuma cremosa.",
+      "description": "Espresso com leite vaporizado, espuma generosa e um toque de canela, resultando em uma bebida cremosa, aromática e equilibrada.",
       "ingredients": ["Espresso", "Leite", "Canela"],
       "price": 5.0,
       "image": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 4,
+      "title": "Chocolate Coffee",
+      "description": "Uma deliciosa combinação de café, chocolate e leite vaporizado.",
+      "ingredients": ["Espresso", "Chocolate", "Leite"],
+      "price": 5.5,
+      "image": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 5,
+      "title": "Iced Coffee",
+      "description": "Café gelado servido com gelo, perfeito para dias quentes.",
+      "ingredients": ["Café", "Gelo"],
+      "price": 4.0,
+      "image": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 6,
+      "title": "Espresso",
+      "description": "Café concentrado e intenso, servido em pequenas doses.",
+      "ingredients": ["Café"],
+      "price": 2.5,
+      "image": "https://images.unsplash.com/photo-1583165278997-0250ea5d72e2?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 7,
+      "title": "Mocha",
+      "description": "Uma mistura de café, chocolate e leite vaporizado, com uma camada de chantilly por cima.",
+      "ingredients": ["Espresso", "Chocolate", "Leite", "Chantilly"],
+      "price": 5.5,
+      "image": "https://images.unsplash.com/photo-1778645053967-7da74634d0ac?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 8,
+      "title": "Macchiato",
+      "description": "Café espresso com uma pequena quantidade de leite vaporizado, criando um contraste de sabores.",
+      "ingredients": ["Espresso", "Leite"],
+      "price": 4.0,
+      "image": "https://images.unsplash.com/photo-1604298458655-ae6e04213678?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 9,
+      "title": "Flat White",
+      "description": "Café espresso com leite vaporizado, semelhante ao cappuccino, mas com menos espuma.",
+      "ingredients": ["Espresso", "Leite"],
+      "price": 4.5,
+      "image": "https://images.unsplash.com/photo-1514066558159-fc8c737ef259?auto=format&fit=crop&q=80&w=800"
     }
   ]
 }
