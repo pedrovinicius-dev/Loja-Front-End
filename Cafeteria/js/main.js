@@ -2,6 +2,11 @@
 // Importa a função responsável por buscar os cafés na API; o caminho indica que api.js está na mesma pasta.
 import { buscarCafes } from './api.js';
 
+import { 
+        adicionarAoCarrinho, 
+        listarCarrinho 
+} from './carrinho.js';   
+
 // Declara uma função assíncrona para que seja possível aguardar a resposta da API sem bloquear o restante do navegador.
 async function iniciarSite() {
 
@@ -42,6 +47,27 @@ async function iniciarSite() {
     const textoCarrinho = document.createElement('span');//texto do carrinho
     textoCarrinho.textContent = 'Carrinho';
     textoCarrinho.className = 'texto-carrinho';
+
+    // Cria o elemento responsável por mostrar a quantidade de produtos
+    const contadorCarrinho = document.createElement('span');
+
+    contadorCarrinho.className = 'badge rounded-pill text-bg-danger ms-2';
+
+    // Atualiza a quantidade de produtos exibida no carrinho
+    function atualizarContadorCarrinho() {
+
+    const carrinhoAtual = listarCarrinho();
+
+    const quantidadeTotal = carrinhoAtual.reduce(
+        (total, cafe) => total + Number(cafe.quantity),
+        0
+    );
+
+    contadorCarrinho.textContent = quantidadeTotal;
+
+    }
+
+    
 
     iconeCarrinho.src = '../assets/carrinho.svg';
     iconeCarrinho.className = 'icone-carrinho';
@@ -122,9 +148,14 @@ async function iniciarSite() {
         // Define o texto que aparece no botão.
         botaoAdicionar.textContent = 'Adicionar ao carrinho';
 
-        //adicionar lógica para adicionar ao carrinho
+        //Adiciona o café ao carrinho quando o botão for clicado; a função é definida como uma arrow function.
         botaoAdicionar.addEventListener('click', () => {
             
+            adicionarAoCarrinho(cafe);
+
+            atualizarContadorCarrinho();
+
+            alert(`${cafe.title} foi adicionado ao carrinho!`);
         });
 
         // Adiciona o título ao corpo do card; appendChild move o elemento para dentro do pai.
@@ -151,8 +182,12 @@ async function iniciarSite() {
     });
 
     carrinho.appendChild(textoCarrinho);
+    carrinho.appendChild(contadorCarrinho);
     carrinho.appendChild(iconeCarrinho);
+    
     cabeca.appendChild(carrinho);
+
+    atualizarContadorCarrinho();
 
     cabeca.appendChild(titulo);
     container.appendChild(cabeca);
