@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(134, 104, 65);
+}
+
+.rotulo-total {
+    display: block;
+    width: 75%;
+    margin: 0 auto 0.25rem;
+    color: rgba(255, 253, 250, 0.82);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+#total-finalizar.fs-4 {
+    width: 75%;
+    margin: 0 auto 1.5rem;
+    color: #fffdfa !important;
+    font-size: 2.25rem !important;
+    line-height: 1.2;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.formulario-finalizacao {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.formulario-finalizacao > .form-label,
+.endereco-entrega > .form-label {
+    margin: 0;
+    color: rgb(75, 52, 46);
+    font-weight: 600;
+}
+
+.form-label .form-control,
+.form-label .form-select {
+    margin-top: 0.4rem;
+}
+
+.linha-completa {
+    grid-column: 1 / -1;
+}
+
+.endereco-entrega {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid rgba(75, 52, 46, 0.25);
+    border-radius: 0.5rem;
+}
+
+.endereco-entrega[hidden],
+#status-pedido:empty {
+    display: none;
+}
+
+.endereco-entrega legend {
+    grid-column: 1 / -1;
+    float: none;
+    width: auto;
+    margin: 0;
+    color: rgb(75, 52, 46);
+    font-size: 1rem;
+    font-weight: 600;
+}

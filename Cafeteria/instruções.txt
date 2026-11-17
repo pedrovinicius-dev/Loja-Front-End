@@ -1,8 +1,18 @@
 INICIAR API
 
-dentro da pasta Cafeteria rodar no terminal:
+acesse a pasta cafeteria no terminal atraves do comando:
+
+cd .\Cafeteria\
+
+e rode o comando:
 
 npx json-server db.json
 
+----------------------------------------------------------------------------------------------------
+Pendências:
 
-*falta deixar o catalogo responsivo para dispositivos mobile
+*falta deixar o catalogo responsivo para dispositivos mobile, alteração de zoom etc
+
+*falta finalizar a dinâmica de limpar carrinho ao finalizar compra + opção de continuar comprando
+
+*falta fazer ajustes de design(não essencial)

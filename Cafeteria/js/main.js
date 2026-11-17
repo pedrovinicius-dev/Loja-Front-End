@@ -41,7 +41,11 @@ async function iniciarSite() {
 
     const carrinho = document.createElement('button');//carrinho
     carrinho.className = 'carrinho';
-    
+
+    carrinho.addEventListener("click", () => {
+    window.location.href = "carrinho.html";
+});
+
     const iconeCarrinho = document.createElement('img');//icone do carrinho
 
     const textoCarrinho = document.createElement('span');//texto do carrinho

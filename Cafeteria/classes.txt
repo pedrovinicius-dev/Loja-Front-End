@@ -6,8 +6,8 @@ RESUMO GERAL
 - Os cards sao criados dentro de cafes.forEach(), por isso cada um recebe os dados
   do cafe correspondente.
 - Os produtos e suas informacoes ficam em db.json.
-- O botao "Adicionar ao carrinho" aparece nos cards, mas sua funcao de clique ainda
-  esta vazia no main.js.
+- O botao "Adicionar ao carrinho" salva o produto no localStorage e atualiza o
+  contador do carrinho.
 
 CLASSES DO BOOTSTRAP
 
@@ -63,3 +63,59 @@ No CSS/style.css:
 
 Para usar varias classes em className, separe os nomes por espacos:
     elemento.className = 'card h-100 minha-classe';
+
+
+PAGINA DO CARRINHO
+
+ESTRUTURA E SELETORES IMPORTANTES
+- A pagina fica em HTML/carrinho.html e carrega CSS/style.css e
+  js/pagina-carrinho.js.
+- .container e pagina-carrinho: envolvem e centralizam o conteudo; a classe
+  pagina-carrinho limita a largura e define o espacamento externo.
+- #lista-carrinho: elemento onde pagina-carrinho.js cria os cards dos produtos.
+- #total-carrinho: elemento onde aparece o total da compra.
+- #finalizar-compra: botao para finalizar a compra. Atualmente ainda nao tem
+  evento JavaScript associado.
+- O link "Continuar comprando" aponta para index.html.
+- Os seletores com # sao IDs, nao classes; no CSS use #lista-carrinho,
+  #total-carrinho e #finalizar-compra para seleciona-los.
+
+CLASSES DO BOOTSTRAP NO HTML DO CARRINHO
+- container: limita e centraliza a largura do conteudo.
+- text-center: centraliza o titulo.
+- mb-4: adiciona margem abaixo do titulo.
+- text-end: alinha o total a direita.
+- mt-4: adiciona margem acima do total.
+- btn: estilo base de botao do Bootstrap.
+- btn-outline-dark: estilo contornado escuro do link "Continuar comprando".
+- btn-dark: estilo escuro do botao "Finalizar compra".
+- A classe propria carrinho-acoes organiza os botoes de navegacao no rodape.
+
+CLASSES CRIADAS PELO JAVASCRIPT PARA CADA PRODUTO
+- card: cria o cartao visual de cada produto.
+- mb-3: adiciona margem abaixo de cada cartao.
+- card-body: area interna do cartao.
+- carrinho-card: aplica borda, fundo e sombra ao cartao.
+- carrinho-item: organiza nome, subtotal e controles em colunas alinhadas.
+- item-nome: identifica o nome do produto.
+- item-subtotal: identifica o subtotal do produto.
+- item-controles: agrupa quantidade e botoes de ajuste.
+- item-quantidade: identifica a quantidade atual.
+- item-acoes: agrupa os botoes de adicionar e remover.
+- btn-outline-success: estilo contornado verde do botao "+".
+- btn-sm: deixa o botao menor.
+- btn-outline-danger: estilo contornado vermelho do botao "-".
+
+DETALHES DO COMPORTAMENTO DO CARRINHO
+- pagina-carrinho.js le os itens com listarCarrinho(), monta um cartao por item
+  e calcula o total com preco x quantidade.
+- O botao "+" adiciona uma unidade; o botao "-" remove uma unidade e remove o
+  produto quando a quantidade chega a zero. A pagina e renderizada novamente
+  depois de cada clique.
+- Quando nao ha itens, #lista-carrinho mostra "Seu carrinho esta vazio." e
+  #total-carrinho mostra total zero.
+- As classes visuais da pagina do carrinho estao definidas em CSS/carrinho.css;
+  o layout atual organiza os itens em colunas para desktop; a responsividade
+  sera adicionada depois.
+- O botao #finalizar-compra existe no HTML, mas pagina-carrinho.js ainda nao
+  implementa sua acao.

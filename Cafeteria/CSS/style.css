@@ -20,14 +20,12 @@ h1{
     width: 1300px;
     height:1550px;
     background-color: rgb(75, 52, 46);
-    border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
 
 }
 
 /* Barra superior fixa no topo da janela. */
 .cabeca {
-    border: 1px solid rgb(255, 255, 255);
     top:0;
     left:0;
     position: fixed;

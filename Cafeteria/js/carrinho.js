@@ -76,6 +76,8 @@ export function removerDoCarrinho(id) {
 
     }
 
+    
+
     salvarCarrinho(carrinho);
 
 }

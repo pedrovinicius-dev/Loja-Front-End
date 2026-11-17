@@ -32,6 +32,8 @@ function renderizarCarrinho() {
 
         totalCarrinho.textContent = 'Total: R$ 0,00';
 
+        localStorage.setItem('totalCarrinho', '0');
+
         return;
     }
 
@@ -42,29 +44,38 @@ function renderizarCarrinho() {
 
         // Cria o card do produto
         const card = document.createElement('div');
-        card.className = 'card mb-3';
+        card.className = 'card carrinho-card mb-3';
 
         const corpo = document.createElement('div');
-        corpo.className = 'card-body d-flex justify-content-between align-items-center';
+        corpo.className = 'card-body carrinho-item';
 
         // Exibe o nome do café
         const nome = document.createElement('h5');
+        nome.className = 'item-nome';
         nome.textContent = cafe.title;
 
         // Calcula o subtotal do produto
         const subtotal = Number(cafe.price) * Number(cafe.quantity);
 
         const preco = document.createElement('p');
+        preco.className = 'item-subtotal';
         preco.textContent = formatarPreco(subtotal);
+
+        const controles = document.createElement('div');
+        controles.className = 'item-controles';
 
         // Exibe a quantidade
         const quantidade = document.createElement('span');
+        quantidade.className = 'item-quantidade';
         quantidade.textContent = `Quantidade: ${cafe.quantity}`;
+
+        const acoes = document.createElement('div');
+        acoes.className = 'item-acoes';
 
         // Botão para adicionar uma unidade
         const botaoAdicionar = document.createElement('button');
         botaoAdicionar.textContent = '+';
-        botaoAdicionar.className = 'btn btn-outline-success btn-sm me-2';
+        botaoAdicionar.className = 'btn btn-outline-success btn-sm';
 
         botaoAdicionar.addEventListener('click', () => {
             adicionarAoCarrinho(cafe);
@@ -82,11 +93,14 @@ function renderizarCarrinho() {
         });
 
         // Organiza os elementos do card
+        acoes.appendChild(botaoAdicionar);
+        acoes.appendChild(botaoRemover);
+        controles.appendChild(quantidade);
+        controles.appendChild(acoes);
+
         corpo.appendChild(nome);
         corpo.appendChild(preco);
-        corpo.appendChild(quantidade);
-        corpo.appendChild(botaoAdicionar);
-        corpo.appendChild(botaoRemover);
+        corpo.appendChild(controles);
 
         card.appendChild(corpo);
 
@@ -97,10 +111,18 @@ function renderizarCarrinho() {
 
     });
 
+    localStorage.setItem('totalCarrinho', String(total));
+
     // Exibe o valor total da compra
     totalCarrinho.textContent = `Total: ${formatarPreco(total)}`;
 
+   
+
+
 }
 
+ document.getElementById('finalizar-compra').addEventListener('click', () => {
+            window.location.href = "finalizar.html";
+        });
 // Executa a função ao carregar a página
 renderizarCarrinho();

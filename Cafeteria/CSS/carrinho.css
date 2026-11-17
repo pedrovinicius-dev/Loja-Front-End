@@ -1,0 +1,116 @@
+.pagina-carrinho {
+    max-width: 68rem;
+    margin: 4rem auto 3rem;
+}
+
+.pagina-carrinho > h1 {
+    margin-bottom: 2rem !important;
+    font-size: 3rem;
+    line-height: 1.15;
+}
+
+.carrinho-card {
+    overflow: hidden;
+    border: 1px solid rgba(75, 52, 46, 0.16);
+    border-radius: 12px;
+    background-color: #fffdfa;
+    box-shadow: 0 4px 14px rgba(49, 33, 23, 0.12);
+}
+
+.carrinho-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.15rem 1.35rem;
+}
+
+.item-nome,
+.item-subtotal {
+    margin: 0;
+}
+
+.item-nome {
+    color: rgb(75, 52, 46);
+    font-weight: 600;
+}
+
+.item-subtotal {
+    color: rgb(75, 52, 46);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.item-controles,
+.item-acoes {
+    display: flex;
+    align-items: center;
+}
+
+.item-controles {
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.item-quantidade {
+    color: #51443e;
+    white-space: nowrap;
+}
+
+.item-acoes {
+    gap: 0.5rem;
+}
+
+.item-acoes .btn {
+    display: inline-grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    place-items: center;
+    font-size: 1.1rem;
+}
+
+#total-carrinho {
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background-color: rgb(75, 52, 46);
+    box-shadow: 0 4px 14px rgba(49, 33, 23, 0.12);
+    color: #fffdfa;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.carrinho-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.carrinho-acoes .btn {
+    padding: 0.7rem 1.1rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.carrinho-acoes .btn-outline-dark {
+    border-color: rgb(75, 52, 46);
+    background-color: #fffdfa;
+    color: rgb(75, 52, 46);
+}
+
+.carrinho-acoes .btn-outline-dark:hover {
+    background-color: #f3e9dc;
+    color: rgb(75, 52, 46);
+}
+
+.carrinho-acoes .btn-dark {
+    border-color: rgb(75, 52, 46);
+    background-color: rgb(75, 52, 46);
+}
+
+.carrinho-acoes .btn-dark:hover {
+    border-color: rgb(58, 39, 34);
+    background-color: rgb(58, 39, 34);
+}
