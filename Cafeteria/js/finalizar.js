@@ -48,6 +48,10 @@ formulario.addEventListener('submit', evento => {
     statusPedido.className = 'alert alert-info linha-completa mb-0';//classe bootstrap
     statusPedido.textContent = 'Compra finalizada!';
 
-})
+    localStorage.removeItem('carrinho');
+    localStorage.removeItem('totalCarrinho');
 
+    elementoTotal.textContent = "R$ 0";
+
+})
 
