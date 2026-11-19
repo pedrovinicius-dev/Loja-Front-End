@@ -13,19 +13,9 @@ Pendências:
 
 *falta deixar o catalogo responsivo para dispositivos mobile, alteração de zoom etc
 
-*falta finalizar a dinâmica de limpar carrinho ao finalizar compra + opção de continuar comprando
+*verificar se é obrigatório somente a div root em todos os arquivos html ou se é só no index,
+(perguntar a outros grupos como fizeram)caso seja obrigatório em tudo, corrigir
 
-*falta fazer ajustes de design(não essencial)
+*falta fazer ajustes de design(fazer se sobrar tempo)
 
-
-parei tentando fazer desaparecer tudo quando finaliza a compra sem ter nada no carrinho e deixar
-so dizendo q n tem nada e pra voltar pro inicio
-
-tem um problema no codigo que tem q ser corrigido quando voltar acerca de alguma coisa no total
-zerar:
-
-Sim — pela imagem, o total e os itens estão aparecendo corretamente. Eu me expressei mal antes: o problema não é o valor visível nessa tela.
-
-O detalhe é que, na versão atual de finalizar.js, depois de mostrar o valor salvo, CarregarItens() grava 0 em totalCarrinho: total começa
- em zero e não é somado. Por isso, a imagem pode mostrar R$ 12 agora, mas uma atualização da página pode mostrar R$ 0. Não alterei nada.
 
