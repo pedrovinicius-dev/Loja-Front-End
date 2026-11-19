@@ -1,6 +1,16 @@
+* {
+     box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+ }
 
 body{
+    margin: 0;
     background-color: rgb(134, 104, 65);
+    overflow-x: hidden;
 }
 
 
@@ -14,13 +24,18 @@ h1{
     font-family: 'Courier New', Courier, monospace;
 }
 
-.catalogo{
-    padding: 20px;
-    margin: 150px 0 auto;
-    width: 1300px;
-    height:1550px;
+.catalogo .row{
+    padding: clamp(12px, 3vw, 24px);
+    margin: 130px 0 auto 40px;;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 400px;
+    height: auto;
     background-color: rgb(75, 52, 46);
     border-radius: 20px;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
 
 }
 
@@ -90,3 +105,94 @@ h1{
     /* Adiciona 10px de espaço depois do texto. */
     margin-right: 10px;
 }
+
+/* Site responsivo para mobiles */
+@media (max-width: 576px){ 
+
+    .cabeca {
+        height: auto;
+        min-height: 120px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .cabeca h1 {
+        font-size: clamp(20px, 5vw, 26px);
+        text-align: center;
+    }
+
+    .cabeca .carrinho {
+        position: static;
+        transform: none;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    .texto-carrinho {
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .icone-carrinho {
+        width: 22px;
+        height: 22px;
+    }
+
+    .carrinho-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.carrinho-item button {
+    flex-shrink: 0;
+}
+
+}
+
+
+/* Ajustes dos cards */
+.catalogo .card {
+    height: 100%;
+    min-width: 0;
+}
+
+.catalogo .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo .card-title,
+.catalogo .card-text {
+    overflow-wrap: break-word;
+}
+
+/* Deixa os cards responsivos em mobiles */
+@media (max-width: 576px) {
+
+    .catalogo {
+        padding: 12px;
+        margin-top: 140px;
+    }
+
+    .catalogo .card-body {
+        padding: 14px;
+    }
+
+    .catalogo .card-title {
+        font-size: 1.05rem;
+    }
+
+    .catalogo .card-text {
+        font-size: 0.9rem;
+    }
+
+    .catalogo .card .btn {
+        width: 100%;
+    }
+
+}
+

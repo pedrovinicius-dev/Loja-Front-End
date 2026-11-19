@@ -1,3 +1,19 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
 body{
     background-color: rgb(134, 104, 65);
 }
@@ -112,4 +128,27 @@ h1 {
     color: #fffdfa;
     font-size: 1.1rem;
     font-weight: 600;
+}
+
+@media (max-width: 576px) {
+
+    .formulario-finalizacao {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .linha-completa {
+        grid-column: auto;
+    }
+
+    .endereco-entrega {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .endereco-entrega legend {
+        grid-column: auto;
+    }   
+
 }
