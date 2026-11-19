@@ -11,7 +11,7 @@ npx json-server db.json
 ----------------------------------------------------------------------------------------------------
 Pendências:
 
-*falta deixar o catalogo responsivo para dispositivos mobile, alteração de zoom etc
+*falta deixar o site responsivo para dispositivos mobile, alteração de zoom etc
 
 *verificar se é obrigatório somente a div root em todos os arquivos html ou se é só no index,
 (perguntar a outros grupos como fizeram)caso seja obrigatório em tudo, corrigir
