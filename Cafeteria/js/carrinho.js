@@ -1,4 +1,3 @@
-
 const CHAVE_CARRINHO = 'carrinho';
 
 // Recupera os produtos armazenados
