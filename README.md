@@ -33,12 +33,6 @@ npx json-server db.json
 
 Depois, abra o arquivo `Cafeteria/HTML/index.html` em um servidor local.
 
-A API será disponibilizada em:
-
-```text
-http://localhost:3000
-```
-
 ## Integrantes
 
 - Luiz Henrique
